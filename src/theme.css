@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap");
+
+:root {
+  --ink: #2b1f17;
+  --ink-2: #3a2a1f;
+  --steel: #8c5a2b;
+  --accent: #c98d52;
+  --accent-ink: #2b1f17;
+  --accent-hover: #d3a271;
+  --accent-deep: #ad7947;
+  --accent-soft: #e1c0a0;
+  --accent-glow: rgba(201, 141, 82, 0.18);
+  --steel-glow: rgba(140, 90, 43, 0.5);
+  --paper: #f8f3ec;
+  --card: #ffffff;
+  --card-hover: #fcf8f5;
+  --muted: #877e77;
+  --faint: #a69e97;
+  --label: #554c45;
+  --line: rgba(43, 31, 23, 0.14);
+  --line-light: rgba(255, 255, 255, .16);
+  --header-bg: rgba(43, 31, 23, 0.9);
+  --deep: #1c140f;
+  --deep-line: #5a504a;
+  --on-dark: #d0cecc;
+  --on-dark-2: #aeaaa7;
+  --on-dark-strong: #eae9e8;
+  --em-font: "Playfair Display", serif;
+  --em-style: italic;
+  --em-weight: 500;
+  --em-tracking: -0.02em;
+  background: var(--paper);
+}
