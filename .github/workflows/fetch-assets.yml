@@ -5,17 +5,37 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p orig2 && cd orig2
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-          get() { curl -sSL -A "$UA" -e "https://ablyss.com/" "https://ablyss.com/$1" -o "$2" || true; }
-          for cp in 1:11 1:54 1:59 1:60 1:61 1:63 1:64 1:68 1:69 1:70 12:56 12:58 12:62 12:71 13:65 13:66 2:67; do c=${cp%%:*}; p=${cp##*:}; get "upholstry-gallery-denver-colorado.php?c=$c&p=$p" "d-$p.html"; done
-          cat d-*.html | grep -hoiE "src=['\"][^'\"]+\.(png|jpe?g|gif|webp)['\"]" | sed -E "s/^src=['\"]//; s/['\"]$//" | grep -v '^http' | sort -u > urls.txt
-          cat urls.txt
-          while read u; do mkdir -p "files/$(dirname "$u")"; get "$u" "files/$u"; done < urls.txt
-          file $(find files -type f) > types.txt
+          mkdir -p orig && cd orig
+          while read slug url; do
+            [ -z "$slug" ] && continue
+            mkdir -p "$slug" && cd "$slug"
+            host=$(echo "$url" | sed -E 's#https?://##; s#/.*##')
+            bare=${host#www.}
+            timeout 300 wget -q -e robots=off -U "$UA" --tries=2 --timeout=20 -r -l 1 -p -k -E -H -D "$bare,www.$bare" \
+              -R "*.mp4,*.mov,*.pdf,*.zip,*.woff*,*.ttf,*.eot" --quota=40m "$url" || true
+            timeout 60 google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,2400 --screenshot="$PWD/../$slug-home.png" "$url" || true
+            timeout 60 google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=390,1800 --screenshot="$PWD/../$slug-mobile.png" "$url" || true
+            find . -type f -size +3M -delete
+            cd ..
+          done <<'LIST'
+          agac http://www.anthonysgoldautocareinc.com/
+          aat http://arvadaautotech.com/
+          bud https://borisupholstery.com/
+          cph https://www.canyonplumbers.com/
+          har http://www.hotchkissauto.com/
+          mar https://www.mancinellis.com/
+          pi https://www.paddockimports.com/
+          tta https://www.tunetechautomotive.org/
+          wt http://www.wizardtransmission.net/
+          fsa https://www.fourseasonsautomotive.com/
+          aur https://ablyss.com/
+          LIST
+          du -sh * | sort -h
       - run: |
           git config user.name "github-actions"; git config user.email "actions@github.com"
-          git add orig2 && git commit -m "Fetched original site assets (3)" && git push
+          git add orig && git commit -qm "Fetched original sites" && git push
