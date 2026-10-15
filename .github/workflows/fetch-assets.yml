@@ -8,20 +8,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p orig
-          cd orig
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
-          for p in "" upholstry-gallery-denver-colorado.php; do curl -sSL -A "$UA" "https://ablyss.com/$p" -o "page-${p:-index}.html" || true; done
-          grep -hoiE '(src|href|data-[a-z]+)="[^"]+\.(css|js|png|jpe?g|gif|webp|svg)[^"]*"' page-*.html | sed -E 's/^[^"]*"//; s/"$//' | sort -u > urls.txt
-          grep -hoiE "url\(['\"]?[^)'\"]+" page-*.html | sed -E "s/url\(['\"]?//" >> urls.txt || true
-          cat urls.txt
-          while read u; do
-            case "$u" in http*) full="$u";; /*) full="https://ablyss.com$u";; *) full="https://ablyss.com/$u";; esac
-            out="files/$(echo "$u" | sed -E 's#^https?://##; s#[?].*##')"
-            mkdir -p "$(dirname "$out")"; curl -sSL -A "$UA" "$full" -o "$out" || true
-          done < urls.txt
-          for c in $(find files -name '*.css'); do grep -oiE "url\(['\"]?[^)'\"]+" "$c" | sed -E "s/url\(['\"]?//" ; done | sort -u > cssurls.txt || true
-          cat cssurls.txt
+          mkdir -p orig && cd orig
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          get() { curl -sSL -A "$UA" -e "https://ablyss.com/" -H "Accept: image/avif,image/webp,image/*,*/*;q=0.8" "https://ablyss.com/$1" -o "$2" || true; }
+          for c in 1 2 12 13; do get "upholstry-gallery-denver-colorado.php?c=$c" "gal-$c.html"; done
+          cat gal-*.html > all.html
+          { grep -hoiE "(src|href)=['\"][^'\"]+\.(css|png|jpe?g|gif|webp)['\"]" ../orig-prev/*.html all.html 2>/dev/null; echo "src='data1/images/upholsterydenver01.jpg'"; } | sed -E "s/^(src|href)=['\"]//; s/['\"]$//" | grep -v '^http' | sort -u > urls.txt
+          for f in css/ablyss.css css/responsive.css images/ablyss.png images/contact-ablyss.png images/read-reviews.png images/expertise-award.png data1/images/upholsterydenver01.jpg data1/images/furniturerefinishingdenver02.jpg data1/images/antiquerestorationdenver01.jpg data1/images/customfurnituredenver01.jpg images/pages/upholstery-refinishing-denver-01.jpg images/pages/upholstery-refinishing-denver-02.jpg catpics/w00001.jpg catpics/w00002.jpg catpics/w00012.jpg catpics/w00013.jpg; do echo "$f" >> urls.txt; done
+          sort -u urls.txt -o urls.txt
+          while read u; do mkdir -p "files/$(dirname "$u")"; get "$u" "files/$u"; done < urls.txt
+          grep -hoiE "url\(['\"]?[^)'\"]+" files/css/*.css | sed -E "s/url\(['\"]?//; s#^\.\./##" | sort -u > cssurls.txt || true
+          while read u; do mkdir -p "files/$(dirname "$u")"; get "$u" "files/$u"; done < cssurls.txt
+          file $(find files -type f) > types.txt; cat types.txt
       - run: |
           git config user.name "github-actions"; git config user.email "actions@github.com"
-          git add orig && git commit -m "Fetched original site assets" && git push
+          git add orig && git commit -m "Fetched original site assets (2)" && git push
