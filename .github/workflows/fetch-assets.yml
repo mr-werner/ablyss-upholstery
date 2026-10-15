@@ -35,6 +35,9 @@ jobs:
           fsa https://www.fourseasonsautomotive.com/
           aur https://ablyss.com/
           LIST
+          # Drop scripts (they carry third-party API keys that trip push protection)
+          find . -type f -name "*.js*" -delete
+          find . -type f \( -name "*.html" -o -name "*.htm" -o -name "*.php*" \) -print0 | xargs -0 perl -0pi -e 's#<script\b.*?</script>##gis; s#(pk|sk)\.eyJ[A-Za-z0-9._-]+#REDACTED#g; s#AIza[0-9A-Za-z_-]{35}#REDACTED#g'
           du -sh * | sort -h
       - run: |
           git config user.name "github-actions"; git config user.email "actions@github.com"
