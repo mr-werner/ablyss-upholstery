@@ -1,4 +1,6 @@
-import { Armchair, Brush, Building2, Gem, Hammer, History, Instagram, Layers, Linkedin, Palette, PaintBucket, Ruler, Sofa, Sparkles, Star, Wrench, ExternalLink, Scissors, Mail } from "lucide-react";
+import { Armchair, Building2, Gem, Hammer, History, Palette, PaintBucket, Ruler, Sofa, Sparkles, Star, Wrench, Mail } from "lucide-react";
+import { HouzzIcon, InstagramIcon, LinkedInIcon, PinterestIcon, YelpIcon } from "./social-icons.jsx";
+import logo from "./assets/ablyss-logo.png";
 
 const COMPANY = "Ablyss Upholstery & Refinishing";
 const MAPS_QUERY = "Ablyss Upholstery & Refinishing, Denver, CO";
@@ -20,7 +22,7 @@ export default {
   FALLBACK_RATING: null, // Thin review count; show the Google link only.
   END_DATE: "2026-11-20T23:59:59-07:00",
 
-  BRAND: { name: "Ablyss", sub: `UPHOLSTERY & REFINISHING · ${FOUNDED}`, icon: Armchair },
+  BRAND: { name: "Ablyss", sub: `UPHOLSTERY & REFINISHING · ${FOUNDED}`, icon: Armchair, logo, logoAlt: COMPANY },
   ANNOUNCE: `Denver's upholstery and refinishing workshop since ${FOUNDED} · Fourth-generation master craftsman`,
 
   HOURS: [], // Not listed on the current site; confirm with the shop.
@@ -31,6 +33,8 @@ export default {
     title: ["Every good piece deserves ", "a second life."],
     text: "Upholstery, refinishing, antique restoration and custom furniture, crafted in-house by a fourth-generation master craftsman. Careful work, attention to detail and quality materials, the same way we've done it for seven decades.",
     cta: "Start a Project",
+    // Their own work, from the gallery on ablyss.com.
+    photo: { src: "/photos/custom-sectional-corner-table.webp", alt: "Custom sectional sofa with a built-in corner end table in a mid-century living room" },
     badgeKicker: "SINCE",
     badgeBig: String(FOUNDED),
     badgeSmall: `${YEARS} years of craftsmanship in Denver`,
@@ -78,6 +82,25 @@ export default {
     ],
   },
 
+  GALLERY: {
+    id: "gallery",
+    nav: "Gallery",
+    eyebrow: "RECENT WORK",
+    title: ["Pieces from ", "our workshop."],
+    text: "A few recent projects from the Ablyss gallery: custom builds, reupholstery and refinishing for Denver homes and businesses.",
+    items: [
+      { src: "/photos/sectional-living-room.webp", caption: "Roche Bobois styled sectional", tag: "Custom furniture" },
+      { src: "/photos/dining-banquette.webp", caption: "Custom dining banquette", tag: "Custom furniture" },
+      { src: "/photos/striped-wingback-chair.webp", caption: "Multi-color wingback chairs", tag: "Residential upholstery" },
+      { src: "/photos/walnut-table.webp", caption: "Walnut table", tag: "Custom furniture" },
+      { src: "/photos/wall-panels-seat-cushions.webp", caption: "Wall panels and seat cushions", tag: "Commercial upholstery" },
+      { src: "/photos/custom-sectional.webp", caption: "Custom sectional", tag: "Residential upholstery" },
+      { src: "/photos/coffee-table-trays.webp", caption: "Custom coffee table with serving trays", tag: "Custom furniture" },
+      { src: "/photos/hair-on-hide-ottoman.webp", caption: "Ottoman in hair-on-hide", tag: "Custom furniture" },
+      { src: "/photos/broncos-chair.webp", caption: "Broncos chair", tag: "Residential upholstery" },
+    ],
+  },
+
   PROCESS: {
     eyebrow: "HOW IT WORKS",
     title: ["From worn out ", "to heirloom again."],
@@ -99,11 +122,12 @@ export default {
       "Interior designers and homeowners come back for the same reasons: careful work, attention to detail and quality materials.",
     ],
     badge: [String(FOUNDED), "Four generations"],
+    // Their own work, from the gallery on ablyss.com.
     tiles: [
-      { label: "Upholstery", icon: Armchair },
-      { label: "Refinishing", icon: Brush },
-      { label: "Antiques", icon: Gem },
-      { label: "Custom", icon: Hammer },
+      { label: "Upholstery", photo: "/photos/chair-before-after.webp", alt: "Armchair before and after reupholstery" },
+      { label: "Refinishing", photo: "/photos/desk-refinishing.webp", alt: "Desk top before and after refinishing" },
+      { label: "Antiques", photo: "/photos/antique-nightstand.webp", alt: "Restored antique nightstand" },
+      { label: "Custom", photo: "/photos/custom-sofa.webp", alt: "Custom sofa built in the Ablyss workshop" },
     ],
     credentials: [
       { title: `Since ${FOUNDED}`, desc: "Seven decades of Denver craftsmanship." },
@@ -144,11 +168,13 @@ export default {
   },
 
   FOOTER_BLURB: `Upholstery, refinishing, antique restoration and custom furniture in Denver since ${FOUNDED}.`,
+  // `top` links also show in the bar above the header, next to the phone number.
   SOCIAL_LINKS: [
-    { name: "Instagram", url: "https://www.instagram.com/ablyss_furniture", icon: Instagram },
-    { name: "Houzz", url: "https://www.houzz.com/pro/jb-ablyss/ablyss-upholstery-and-refinishing", icon: Layers },
-    { name: "Yelp", url: "https://www.yelp.com/biz/ablyss-upholstery-and-refinishing-denver", icon: ExternalLink },
-    { name: "LinkedIn", url: "https://www.linkedin.com/company/3231458", icon: Linkedin },
+    { name: "Instagram", url: "https://www.instagram.com/ablyss_furniture/", icon: InstagramIcon, top: true },
+    { name: "Pinterest", url: "https://www.pinterest.com/ablyssupholsteryrefinishing/", icon: PinterestIcon, top: true },
+    { name: "Houzz", url: "https://www.houzz.com/pro/jb-ablyss/ablyss-upholstery-and-refinishing", icon: HouzzIcon, top: true },
+    { name: "Yelp", url: "https://www.yelp.com/biz/ablyss-upholstery-and-refinishing-denver", icon: YelpIcon, top: true },
+    { name: "LinkedIn", url: "https://www.linkedin.com/company/3231458", icon: LinkedInIcon, top: true },
     { name: "Google", url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`, icon: Star },
   ],
 };

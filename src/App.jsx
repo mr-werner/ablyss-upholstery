@@ -197,6 +197,13 @@ function BrandMark() {
 }
 
 function Brand({ onClick }) {
+  if (SITE.BRAND.logo) {
+    return (
+      <a className="brand brand-logo" href="#home" onClick={onClick} aria-label={`${COMPANY} home`}>
+        <img src={SITE.BRAND.logo} alt={SITE.BRAND.logoAlt || COMPANY} width="321" height="112" />
+      </a>
+    );
+  }
   return (
     <a className="brand" href="#home" onClick={onClick} aria-label={`${COMPANY} home`}>
       <BrandMark />
@@ -208,7 +215,7 @@ function Brand({ onClick }) {
 function navItems() {
   return [
     ["#services", "Services"],
-    SITE.FEATURE && [`#${SITE.FEATURE.id}`, SITE.FEATURE.nav],
+    SITE.GALLERY ? [`#${SITE.GALLERY.id}`, SITE.GALLERY.nav] : SITE.FEATURE && [`#${SITE.FEATURE.id}`, SITE.FEATURE.nav],
     ["#about", SITE.ABOUT.nav || "About"],
     ["#reviews", "Reviews"],
     ["#visit", SITE.VISIT.nav || "Visit"],
@@ -224,7 +231,16 @@ function SiteHeader() {
       <div className="announce">
         <div className="container announce-inner">
           <span>{SITE.ANNOUNCE}</span>
-          <a href={`tel:${PHONE}`}><Phone size={13} /> {PHONE_DISPLAY}</a>
+          <div className="announce-contact">
+            {SITE.SOCIAL_LINKS.some(({ top }) => top) && (
+              <div className="announce-social">
+                {SITE.SOCIAL_LINKS.filter(({ url, top }) => url && top).map(({ name, url, icon: Icon }) => (
+                  <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={`${COMPANY} on ${name}`} title={name}><Icon size={14} /></a>
+                ))}
+              </div>
+            )}
+            <a href={`tel:${PHONE}`}><Phone size={13} /> {PHONE_DISPLAY}</a>
+          </div>
         </div>
       </div>
       <header className="header">
@@ -263,6 +279,16 @@ function Hero({ rating }) {
             <a className="btn ghost" href={`tel:${PHONE}`}><Phone size={18} /> {PHONE_DISPLAY}</a>
           </div>
         </div>
+        {HERO.photo ? (
+          <figure className="hero-photo">
+            <img src={HERO.photo.src} alt={HERO.photo.alt} width="900" height="675" fetchPriority="high" />
+            <figcaption className="hero-photo-badge">
+              <span>{HERO.badgeKicker}</span>
+              <strong>{HERO.badgeBig}</strong>
+              <small>{HERO.badgeSmall}</small>
+            </figcaption>
+          </figure>
+        ) : (
         <aside className="hero-card" aria-label="At a glance">
           {rating ? (
             <a className="hero-rating" href={rating.googleMapsUri || GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
@@ -283,6 +309,7 @@ function Hero({ rating }) {
             ))}
           </ul>
         </aside>
+        )}
       </div>
       <div className="container stats">
         {SITE.STATS(rating).map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
@@ -371,6 +398,32 @@ function Feature() {
   );
 }
 
+function Gallery() {
+  const { GALLERY } = SITE;
+  if (!GALLERY) return null;
+  return (
+    <section className="section gallery" id={GALLERY.id}>
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">{GALLERY.eyebrow}</span>
+            <h2><Title parts={GALLERY.title} /></h2>
+          </div>
+          <p>{GALLERY.text}</p>
+        </div>
+        <div className="gallery-grid">
+          {GALLERY.items.map(({ src, caption, tag }) => (
+            <figure key={src}>
+              <img src={src} alt={caption} loading="lazy" />
+              <figcaption><small>{tag}</small>{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Process() {
   const { PROCESS } = SITE;
   return (
@@ -402,10 +455,12 @@ function About() {
   return (
     <section className="section about" id="about">
       <div className="container about-inner">
-        <div className="about-media" aria-hidden="true">
+        <div className="about-media">
           <div className="about-quads">
-            {ABOUT.tiles.map(({ label, icon: Icon, tone }) => (
-              <span className="about-quad" key={label} style={tone ? { "--tone": tone } : undefined}><Icon size={34} strokeWidth={1.4} /><small>{label}</small></span>
+            {ABOUT.tiles.map(({ label, icon: Icon, tone, photo, alt }) => photo ? (
+              <figure className="about-quad about-photo" key={label}><img src={photo} alt={alt} loading="lazy" /><figcaption>{label}</figcaption></figure>
+            ) : (
+              <span className="about-quad" key={label} aria-hidden="true" style={tone ? { "--tone": tone } : undefined}><Icon size={34} strokeWidth={1.4} /><small>{label}</small></span>
             ))}
           </div>
           <div className="about-badge"><strong>{ABOUT.badge[0]}</strong><span>{ABOUT.badge[1]}</span></div>
@@ -708,6 +763,7 @@ export default function App() {
         <Offers />
         <Services />
         <Feature />
+        <Gallery />
         <Process />
         <About />
         <Reviews data={reviewData} rating={rating} />
