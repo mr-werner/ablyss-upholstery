@@ -1,0 +1,21 @@
+files/images/ablyss.png:          PNG image data, 321 x 112, 8-bit/color RGBA, non-interlaced
+files/images/contact-ablyss.png:  PNG image data, 300 x 70, 8-bit/color RGBA, non-interlaced
+files/images/expertise-award.png: PNG image data, 160 x 127, 8-bit/color RGBA, non-interlaced
+files/images/read-reviews.png:    PNG image data, 300 x 70, 8-bit/color RGB, non-interlaced
+files/photos/s00071.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x621, components 3
+files/photos/s00066.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 426x900, components 3
+files/photos/s00059.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x675, components 3
+files/photos/s00058.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x418, components 3
+files/photos/s00060.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x455, components 3
+files/photos/s00064.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x301, components 3
+files/photos/s00054.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 80", progressive, precision 8, 900x675, components 3
+files/photos/s00069.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x675, components 3
+files/photos/s00061.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x753, components 3
+files/photos/s00065.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 761x900, components 3
+files/photos/s00067.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x675, components 3
+files/photos/s00056.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 491x900, components 3
+files/photos/s00068.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x317, components 3
+files/photos/s00063.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 593x900, components 3
+files/photos/s00062.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 761x900, components 3
+files/photos/s00070.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 900x675, components 3
+files/photos/s00011.jpg:          JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 80", progressive, precision 8, 900x516, components 3
