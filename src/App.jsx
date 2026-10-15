@@ -329,6 +329,29 @@ function Offers() {
   );
 }
 
+function Awards() {
+  const { AWARDS } = SITE;
+  if (!AWARDS?.items?.length) return null;
+  return (
+    <section className="awards" aria-label="Awards and recognition">
+      <div className="container awards-inner">
+        <div className="awards-copy">
+          <span className="eyebrow">{AWARDS.eyebrow}</span>
+          <p>{AWARDS.text}</p>
+        </div>
+        <ul className="awards-list">
+          {AWARDS.items.map(({ img, title, issuer }) => (
+            <li key={title}>
+              <img src={img} alt={`${issuer}: ${title}`} loading="lazy" />
+              <span><strong>{title}</strong><small>{issuer}</small></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function Services() {
   const { SERVICES } = SITE;
   return (
@@ -761,6 +784,7 @@ export default function App() {
       <main id="home">
         <Hero rating={rating} />
         <Offers />
+        <Awards />
         <Services />
         <Feature />
         <Gallery />

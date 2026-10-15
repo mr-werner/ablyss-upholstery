@@ -42,6 +42,7 @@ The "I'm Interested" form posts to `api/demo-interest.js`, which proxies to the 
 - One clear experience claim (since 1954, fourth-generation craftsman) instead of competing "60 years" and "100 years combined" numbers.
 - Added a project request form that asks for photos and the piece, plus a clear restoration process.
 - Uses their own logo, a softer palette from their brand (light blue #65B4C5, teal #37808F, logo brown), their social links in the top bar next to the phone number, and 14 photos of their work in the hero, a new Gallery section and Our Story.
+- Shows the Expertise "Best Upholstery Services in Denver" award from their current homepage in a recognition band under the hero.
 
 ## Before client presentation
 

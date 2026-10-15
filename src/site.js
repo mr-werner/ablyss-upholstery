@@ -1,6 +1,7 @@
 import { Armchair, Building2, Gem, Hammer, History, Palette, PaintBucket, Ruler, Sofa, Sparkles, Star, Wrench, Mail } from "lucide-react";
 import { HouzzIcon, InstagramIcon, LinkedInIcon, PinterestIcon, YelpIcon } from "./social-icons.jsx";
 import logo from "./assets/ablyss-logo.png";
+import expertiseAward from "./assets/expertise-best-upholstery-denver.png";
 
 const COMPANY = "Ablyss Upholstery & Refinishing";
 const MAPS_QUERY = "Ablyss Upholstery & Refinishing, Denver, CO";
@@ -24,6 +25,13 @@ export default {
 
   BRAND: { name: "Ablyss", sub: `UPHOLSTERY & REFINISHING · ${FOUNDED}`, icon: Armchair, logo, logoAlt: COMPANY },
   ANNOUNCE: `Denver's upholstery and refinishing workshop since ${FOUNDED} · Fourth-generation master craftsman`,
+
+  // Shown on the current ablyss.com homepage.
+  AWARDS: {
+    eyebrow: "RECOGNITION",
+    text: "Named one of the best upholstery services in Denver by Expertise.",
+    items: [{ img: expertiseAward, title: "Best Upholstery Services in Denver", issuer: "Expertise" }],
+  },
 
   HOURS: [], // Not listed on the current site; confirm with the shop.
   HOURS_SHORT: "",
