@@ -10,35 +10,15 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-          mkdir -p orig && cd orig
+          mkdir -p extra
           while read slug url; do
-            [ -z "$slug" ] && continue
-            mkdir -p "$slug" && cd "$slug"
-            host=$(echo "$url" | sed -E 's#https?://##; s#/.*##')
-            bare=${host#www.}
-            timeout 300 wget -q -e robots=off -U "$UA" --tries=2 --timeout=20 -r -l 1 -p -k -E -H -D "$bare,www.$bare" \
-              -R "*.mp4,*.mov,*.pdf,*.zip,*.woff*,*.ttf,*.eot" --quota=40m "$url" || true
-            timeout 60 google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,2400 --screenshot="$PWD/../$slug-home.png" "$url" || true
-            timeout 60 google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=390,1800 --screenshot="$PWD/../$slug-mobile.png" "$url" || true
-            find . -type f -size +3M -delete
-            cd ..
-          done <<'LIST'
-          agac http://www.anthonysgoldautocareinc.com/
-          aat http://arvadaautotech.com/
-          bud https://borisupholstery.com/
-          cph https://www.canyonplumbers.com/
-          har http://www.hotchkissauto.com/
-          mar https://www.mancinellis.com/
-          pi https://www.paddockimports.com/
-          tta https://www.tunetechautomotive.org/
-          wt http://www.wizardtransmission.net/
-          fsa https://www.fourseasonsautomotive.com/
-          aur https://ablyss.com/
-          LIST
-          # Drop scripts (they carry third-party API keys that trip push protection)
-          find . -type f -name "*.js*" -delete
-          find . -type f \( -name "*.html" -o -name "*.htm" -o -name "*.php*" \) -print0 | xargs -0 perl -0pi -e 's#<script\b.*?</script>##gis; s#(pk|sk)\.eyJ[A-Za-z0-9._-]+#REDACTED#g; s#AIza[0-9A-Za-z_-]{35}#REDACTED#g'
-          du -sh * | sort -h
+            [ -z "$url" ] && continue
+            h=$(echo -n "$url" | md5sum | cut -c1-10)
+            name=$(basename "${url%%/:/*}" | sed 's/[?#].*//; s/%20/-/g; s/[^A-Za-z0-9._-]/_/g' | cut -c1-80)
+            mkdir -p "extra/$slug"
+            curl -sSL -A "$UA" --max-time 40 --max-filesize 4000000 -o "extra/$slug/$h-$name" "$url" && echo "$h-$name $url" >> "extra/$slug/index.txt" || rm -f "extra/$slug/$h-$name"
+          done < urls.txt
+          du -sh extra/*
       - run: |
           git config user.name "github-actions"; git config user.email "actions@github.com"
-          git add orig && git commit -qm "Fetched original sites" && git push
+          git add extra && git commit -qm "Fetched extra images" && git push

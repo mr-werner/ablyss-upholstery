@@ -1,2 +1,0 @@
-images/photo-buttons.png
-images/social-media.png
