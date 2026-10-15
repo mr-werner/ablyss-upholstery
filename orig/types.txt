@@ -1,0 +1,38 @@
+files/catpics/w00012.jpg:                                JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/catpics/w00001.jpg:                                JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/catpics/w00013.jpg:                                JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/catpics/w00002.jpg:                                JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 80", progressive, precision 8, 300x300, components 3
+files/engine1/style.css:                                 ASCII text, with very long lines (501)
+files/css/ablyss.css:                                    ASCII text
+files/css/responsive.css:                                ASCII text
+files/css/normalize.css:                                 ASCII text
+files/images/photo-buttons.png:                          PNG image data, 240 x 60, 8-bit/color RGBA, non-interlaced
+files/images/social-media.png:                           PNG image data, 320 x 64, 8-bit/color RGB, non-interlaced
+files/images/ablyss.png:                                 PNG image data, 321 x 112, 8-bit/color RGBA, non-interlaced
+files/images/contact-ablyss.png:                         PNG image data, 300 x 70, 8-bit/color RGBA, non-interlaced
+files/images/pages/upholstery-refinishing-denver-01.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, baseline, precision 8, 475x350, components 3
+files/images/pages/upholstery-refinishing-denver-02.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, baseline, precision 8, 475x350, components 3
+files/images/expertise-award.png:                        PNG image data, 160 x 127, 8-bit/color RGBA, non-interlaced
+files/images/read-reviews.png:                           PNG image data, 300 x 70, 8-bit/color RGB, non-interlaced
+files/photos/w00011.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00070.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00066.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00059.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00064.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00069.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00060.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00065.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/wNoPic.jpg:                                 JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, baseline, precision 8, 300x300, components 3
+files/photos/w00061.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00063.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00068.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00071.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00056.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00062.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00054.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00067.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/photos/w00058.jpg:                                 JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80", progressive, precision 8, 300x300, components 3
+files/data1/images/furniturerefinishingdenver02.jpg:     JPEG image data, JFIF standard 1.01, resolution (DPI), density 144x144, segment length 16, baseline, precision 8, 950x400, components 3
+files/data1/images/antiquerestorationdenver01.jpg:       JPEG image data, JFIF standard 1.01, resolution (DPI), density 144x144, segment length 16, baseline, precision 8, 950x400, components 3
+files/data1/images/upholsterydenver01.jpg:               JPEG image data, JFIF standard 1.01, resolution (DPI), density 144x144, segment length 16, baseline, precision 8, 950x400, components 3
+files/data1/images/customfurnituredenver01.jpg:          JPEG image data, JFIF standard 1.01, resolution (DPI), density 144x144, segment length 16, baseline, precision 8, 950x400, components 3
