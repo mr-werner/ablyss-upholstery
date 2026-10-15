@@ -1,0 +1,396 @@
+
+/* REVIEWS CSS*/
+.m1-summary {
+    color: var(--wp--preset--color--foreground) !important;
+    font-size: 12px;
+}
+
+.m1-slider {
+    padding-bottom: 40px;
+    margin-left: -89px;
+}
+
+.m1-list {
+    max-width: 600px;
+    margin: auto;
+}
+
+.m1-summary a {
+    color: var(--wp--preset--color--foreground) !important;
+    text-decoration: none;
+}
+
+.m1-slider a, .m1-list a {
+    text-decoration: none;
+}
+
+
+.reviewsContainer {
+    max-width: 600px;
+    width: 90%;
+    fill: var(--wp--preset--color--primary);
+    stroke: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--background);
+    padding: 20px;
+    font-family: verdana;	
+}
+
+.m1-list .reviewsContainer {
+    border-bottom: 1px solid var(--wp--preset--color--primary);
+}
+
+.m1-slider .reviewsContainer {
+    width: 280px;
+    min-height: 350px;
+    background-color: white;
+    border: 2px solid var(--wp--preset--color--primary);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sc-view-all {
+	text-align: center; 
+    margin-top: 30px;
+	font-size: 10px;
+	font-weight: 500;
+}
+
+.sc-logo {
+    text-align: center;
+    margin-bottom: 5px; 
+}
+
+.sc-logo img {
+    width: 75px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.m1-star {
+    width: 12px;
+    padding: 0px 1px 0px 2px;
+	fill: var(--wp--preset--color--primary) !important;
+    stroke: var(--wp--preset--color--primary) !important;
+}
+
+.m1-list .m1-star {
+    vertical-align: text-bottom;
+    width: 15px;
+    height: 17px;
+}
+
+.m1-slider .m1-star {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.reviewCard {
+    width: 100%
+}
+
+.reviewCardInfoRating {
+    padding-top: 0px;
+    margin-right: 5px;
+}
+
+.m1-slider .reviewCardInfoRating {
+    padding-top: 15px;
+}
+
+.reviewCardInfoName {
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+.m1-slider .reviewCardInfoName {
+    padding: 10px 0 0px 0;
+    display: block;
+}
+
+.reviewCardInfoVehicle {
+    font-size: 11px;
+    color: #bbb;
+    white-space: nowrap;
+}
+
+.m1-slider .reviewCardInfoVehicle {
+    display: block;
+}
+
+.m1-list .reviewCardIcon {
+    width: 90px;
+}
+
+.m1-slider .reviewCardIcon {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.reviewCardTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.m1-list .reviewCardTitle {
+    padding: 15px 0 5px 0;
+}
+
+.m1-slider .reviewCardTitle {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.reviewCardReview {
+    font-size: 14px;
+    color: #777;
+}
+
+.reviewIconSvg {
+    width: 32px;
+    height: 32px;
+    fill: var(--wp--preset--color--primary);
+    display: inline-block;
+}
+
+.m1-list .reviewIconSvg, .m1-slider .reviewIconSpan {
+    float: right;
+}
+
+.reviewNameContainer {
+    vertical-align: top;
+}
+
+.m1-slider .reviewNameContainer {
+    margin-bottom: 5px;
+}
+
+.m1-avatar {
+    width: 50px;
+    height: 45px;
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--background);
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.m1-verified {
+    color: #c45500;
+    white-space: nowrap;
+}
+
+.carousel-item {
+    height: 600px;
+}
+
+.reviewRating {
+    padding-left: 3px;
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+.reviewCount {
+    padding-left: 5px;
+    opacity: 70%;
+}
+
+.starContainer {
+    vertical-align: text-bottom;
+    white-space: nowrap;
+    fill: var(--wp--preset--color--primary) !important;
+    stroke: var(--wp--preset--color--primary) !important;
+}
+
+.m1-summary .starContainer {
+    line-height: 12px;
+}
+
+.m1-list .starContainer, .m1-slider .starContainer {
+    fill: var(--wp--preset--color--primary) !important;
+    stroke: var(--wp--preset--color--primary) !important;
+    vertical-align: bottom;
+}
+
+.reviewCardAvatar {
+    width: 75px;
+}
+
+.m1-link {
+    color: purple;
+    cursor: pointer;
+}
+
+.m1-expand {
+    display: none;
+}
+
+.m1-crop .m1-expand {
+    display: inline;
+}
+
+.expandedText {
+    display: inline;
+}
+
+.m1-crop .expandedText {
+    display: none;
+}
+
+@media only screen and (max-width: 330px) {
+    .m1-list .reviewCardAvatar {
+        display: none;
+    }
+
+    .m1-slider .reviewsContainer {
+        width: 250px;
+    }
+}
+
+/*COUPONS CSS*/
+
+.m1-coupon-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.m1-coupon {
+    margin: auto;
+    width: 875px;
+}
+
+.m1-legacy-coupons {
+    max-width: 620px;
+    margin: auto;
+}
+
+.m1-coupon-image-container {
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 100;
+    position: relative;
+}
+
+.m1-coupon-image {
+    max-width: 295px;
+    max-height: 325px;
+    min-width: 365px;
+    min-height: 225px;
+    border-radius: 30px;
+    z-index: 100;
+    padding: 0;
+}
+
+.m1-coupon-content {
+    vertical-align: middle;
+    display: inline-block;
+    min-height: 200px;
+    border-radius: 30px;
+    background-color: white;
+    padding: 30px;
+    z-index: 10;
+    position: relative;
+    min-width: 300px;
+    max-width: 400px;
+    margin: auto;
+}
+
+
+.m1-coupon-content, .m1-coupon-image {
+    border: 1px solid lightgray;
+}
+
+    .m1-coupon-content.coupon-right {
+        margin-left: -30px;
+        padding-left: 60px;
+    }
+
+
+    .m1-coupon-content.image-coupon {
+        margin-left: -30px;
+        padding-left: 60px;
+        max-width: 600px;
+    }
+
+    .m1-coupon-content.coupon-left {
+        margin-right: -30px;
+        padding-right: 60px;
+    }
+
+.m1-coupon-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--wp--preset--color--primary);
+    padding: 3px 0;
+    line-height: 1.4;
+}
+
+.m1-coupon-amount {
+    text-align: center;
+    font-size: 54px;
+    color: var(--wp--preset--color--primary);
+    padding: 3px 0;
+    line-height: 54px;
+}
+
+.m1-coupon-offer {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--wp--preset--color--primary);
+    padding: 3px 0;
+}
+
+
+.m1-coupon-fine-print {
+    color: black;
+    font-size: 12px;
+    padding: 3px 0;
+    text-align: center;
+}
+
+.m1-coupon-expiration {
+    font-size: 12px;
+    padding: 3px 0;
+    text-align: center;
+    color:#000;
+}
+
+.m1-coupon.m1-show-borders {
+    margin-top: 60px;
+}
+
+@media only screen and (max-width: 780px) {
+	.m1-coupon-image-container {
+		display: none;
+	}
+	
+	.m1-coupon {
+		width: 90%;
+	}
+	
+	.m1-coupon-content {
+		margin-right: 0px;
+		margin-left: 0px;
+		padding-right: 0px;
+		padding-left: 0px;
+		max-width: 100%;
+		min-width: 100%;
+		width: 100%;
+	}
+	.m1-coupon-content.coupon-left, .m1-coupon-content.coupon-right {
+		margin-left: -10px;
+		margin-right: 0px;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}

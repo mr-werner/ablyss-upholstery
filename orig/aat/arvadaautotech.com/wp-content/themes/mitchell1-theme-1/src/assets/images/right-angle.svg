@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10.9" height="17.5" viewBox="0 0 10.9 17.5">
+	<g>
+		<defs><rect id="SVGID_1_" x="0" y="0" width="10.9" height="17.5"/></defs>
+		<clipPath id="clip-path"><use xlink:href="#SVGID_1_" style="overflow:visible;"/></clipPath>
+		<g id="Group_1" clip-path="url(#clip-path)"><path id="Path_1" d="M10.3,10.1L3.1,17c-0.7,0.7-1.9,0.7-2.6-0.1c-0.7-0.7-0.7-1.9,0.1-2.5l5.9-5.6L0.6,3.1
+			c-0.7-0.7-0.7-1.8-0.1-2.6c0.7-0.7,1.8-0.8,2.6-0.1c0,0,0,0,0,0l7.2,6.9C11,8.1,11.1,9.3,10.3,10.1C10.4,10,10.3,10,10.3,10.1"/></g>
+	</g>
+</svg>

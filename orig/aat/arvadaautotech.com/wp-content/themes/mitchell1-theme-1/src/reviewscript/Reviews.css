@@ -1,0 +1,32 @@
+﻿.review_container {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.starFull, .starEmpty, .star1Q, .star2Q, .star3Q {
+    margin: 0 2px;
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+}
+
+.starFull {
+    background-size: 11px;
+    background-image: url('https://arvadaautotech.com/wp-content/themes/mitchell1-theme-1/src/reviewscript/starFull.png');
+}
+
+.star1Q {
+    background-size: 11px;
+    background-image: url('https://arvadaautotech.com/wp-content/themes/mitchell1-theme-1/src/reviewscript/star1Q.png');
+}
+
+.star2Q {
+    background-size: 11px;
+    background-image: url('https://arvadaautotech.com/wp-content/themes/mitchell1-theme-1/src/reviewscript/star2Q.png');
+}
+
+.star3Q {
+    background-size: 11px;
+    background-image: url('https://arvadaautotech.com/wp-content/themes/mitchell1-theme-1/src/reviewscript/star3Q.png');
+}

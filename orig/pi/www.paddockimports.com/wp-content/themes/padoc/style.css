@@ -1,0 +1,48 @@
+/*
+Theme Name: Paddoc Imports
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, accessibility-ready
+Text Domain: twentythirteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@media (min-width: 981px) {
+    #menu-item-18 {
+        max-width: 130px;
+    }
+}
+
+#menu-item-18 .sub-menu {
+    width: 220px!important;
+}
+
+.page-template-blog h1 {
+	text-align: center;
+}
+
+nav ul.sub-menu {
+    padding: 10px 13px !important;
+}
+
+.page-id-13 aside#text-4 img {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+	.col-lg-4.col-md-4.col-sm-4.col-xs-12.blog-box {
+    		min-height: 555px;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+	.col-lg-4.col-md-4.col-sm-4.col-xs-12.blog-box {
+    		min-height: 600px;
+	}
+}
