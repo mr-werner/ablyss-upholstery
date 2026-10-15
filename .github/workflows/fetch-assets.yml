@@ -1,0 +1,27 @@
+name: fetch-assets
+on: push
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p orig
+          cd orig
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
+          for p in "" upholstry-gallery-denver-colorado.php; do curl -sSL -A "$UA" "https://ablyss.com/$p" -o "page-${p:-index}.html" || true; done
+          grep -hoiE '(src|href|data-[a-z]+)="[^"]+\.(css|js|png|jpe?g|gif|webp|svg)[^"]*"' page-*.html | sed -E 's/^[^"]*"//; s/"$//' | sort -u > urls.txt
+          grep -hoiE "url\(['\"]?[^)'\"]+" page-*.html | sed -E "s/url\(['\"]?//" >> urls.txt || true
+          cat urls.txt
+          while read u; do
+            case "$u" in http*) full="$u";; /*) full="https://ablyss.com$u";; *) full="https://ablyss.com/$u";; esac
+            out="files/$(echo "$u" | sed -E 's#^https?://##; s#[?].*##')"
+            mkdir -p "$(dirname "$out")"; curl -sSL -A "$UA" "$full" -o "$out" || true
+          done < urls.txt
+          for c in $(find files -name '*.css'); do grep -oiE "url\(['\"]?[^)'\"]+" "$c" | sed -E "s/url\(['\"]?//" ; done | sort -u > cssurls.txt || true
+          cat cssurls.txt
+      - run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add orig && git commit -m "Fetched original site assets" && git push
